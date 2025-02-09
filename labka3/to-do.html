@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Third lab</title>
+        <style>
+            h1 {
+                font-family: system-ui, 'Segoe UI', Roboto;
+                font-size: 20px;
+                padding-left: 20px;
+                font-weight: 400;
+                color: rgb(124, 125, 125);
+                background-color: black;
+            }
+
+            input[type="text"], .addButton {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 5px;
+                font-size: 15px;
+                border: 1px solid gray;
+                border-radius: 3px;
+            }
+
+            input[type="text"] {
+                width: 500px;
+                margin-left: 120px;
+            }
+
+            .addButton {
+                background-color: rgb(51, 122, 183);
+                color: aliceblue;
+                font-size: 15px;
+                border: 1px solid rgb(51, 122, 183);
+                border-radius: 3px;
+                margin-left: 15px;
+            }
+
+            .firstP {
+                margin-left: 25px;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                font-size: 45px;
+                font-family: system-ui, 'Segoe UI', Roboto;
+                line-height: 1;
+            }
+
+            .task-list {
+                margin-top: 20px;
+                margin-left: 25px;
+            }
+
+            .task {
+                padding: 10px;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                border: 1px solid gray;
+                border-radius: 2px;
+            }
+
+            .task span {
+                flex-grow: 1;
+                padding-left: 10px;
+            }
+
+            .task button {
+                margin-left: 10px;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+
+            .done {
+                background-color: green;
+                color: white;
+                border-radius: 3px;
+            }
+
+            .delete {
+                background-color: red;
+                color: white;
+                border-radius: 3px;
+            }
+
+            .checkbox {
+                width: 20px;
+                height: 20px;
+                background-color: lightgray;
+                border: 1px solid gray;
+                cursor: pointer;
+                margin-right: 10px;
+                border-radius: 3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .checkbox.checked {
+                background-color: #2196F3;
+            }
+
+            .checkbox.checked::after {
+                content: "✔";
+                font-size: 16px;
+                color: white;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>ToDo List</h1>
+
+        <p class="firstP">ToDo List</p>
+        <input type="text" id="task-input" placeholder="New Task">
+        <button class="addButton" onclick="addTask()">Add</button>
+
+        <div class="task-list" id="task-list"></div>
+
+        <script>
+            function addTask() {
+                const taskInput = document.getElementById('task-input');
+                const taskText = taskInput.value;
+
+                if (taskText === "") {
+                    alert("Why haven't you written smth?");
+                    return;
+                }
+
+                const taskElement = document.createElement('div');
+                taskElement.classList.add('task');
+
+                const checkbox = document.createElement('div');
+                checkbox.classList.add('checkbox');
+                checkbox.onclick = () => {
+                    checkbox.classList.toggle('checked');
+                };
+                taskElement.appendChild(checkbox);
+
+                const taskTextNode = document.createElement('span');
+                taskTextNode.textContent = taskText;
+                taskElement.appendChild(taskTextNode);
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = "Delete";
+                deleteButton.classList.add('delete');
+                deleteButton.onclick = () => taskElement.remove();
+                taskElement.appendChild(deleteButton);
+
+                const taskList = document.getElementById('task-list');
+                taskList.appendChild(taskElement);
+
+                taskInput.value = '';
+            }
+        </script>
+    </body>
+</html>
