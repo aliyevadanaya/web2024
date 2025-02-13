@@ -60,6 +60,10 @@
                 border-radius: 2px;
             }
 
+            .doneTask {
+                text-decoration: line-through;
+            }
+
             .task span {
                 flex-grow: 1;
                 padding-left: 10px;
@@ -135,6 +139,7 @@
                 checkbox.classList.add('checkbox');
                 checkbox.onclick = () => {
                     checkbox.classList.toggle('checked');
+                    taskTextNode.classList.toggle('doneTask'); 
                 };
                 taskElement.appendChild(checkbox);
 
