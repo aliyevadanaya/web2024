@@ -1,9 +1,17 @@
 <div class="products-container">
-    <div class="product-card" *ngFor="let product of products">
-      <img [src]="product.image" [alt]="product.name">
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.description }}</p>
-      <div class="product-rating">⭐ {{ product.rating }}</div> 
-      <a [href]="product.link" target="_blank">Купить</a>
+  <div class="product-card" *ngFor="let product of products">
+    <img [src]="product.image" [alt]="product.name">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <div class="product-rating">⭐ {{ product.rating }}</div> 
+    <a class="buy-button" [href]="product.link" target="_blank">Купить</a>
+    <div class="social-buttons">
+      <a class="social-button" [href]="'https://wa.me/?text=Товар: ' + product.link" target="_blank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa_C1PTCAhk_3_6Y9wUn9p7NWdwpJjOtVxyw&s" alt="WhatsApp">
+      </a>
+      <a class="social-button" [href]="'https://t.me/share/url?url=' + product.link + '&text=Товар'" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/256/5968/5968804.png" alt="Telegram">
+      </a>
     </div>
+  </div>
 </div>
