@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(17, 17, 17); 
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+h1 {
+    background: linear-gradient(135deg, black, #05111f);
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 50px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.category-buttons button {
+    background: linear-gradient(135deg, black, #05111f);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.category-buttons button:hover {
+    background: linear-gradient(135deg, #000000, #003a5c);
+    transform: scale(1.05);
+}
+
+.category-buttons button.active {
+    background: #00408a;
+}

@@ -1,0 +1,14 @@
+<div class="product-card">
+  <div class="btn-group">
+    <button class="btn-like" (click)="onLike()">❤️</button>
+    <button class="btn-remove" (click)="onRemove()">🗑️</button>
+  </div>
+  <div class="image-container">
+    <img [src]="product.image" [alt]="product.name">
+  </div>
+  <h3>{{ product.name }}</h3>
+  <p>{{ product.description }}</p>
+  <p>⭐ {{ product.rating }}/5</p>
+  <a class="btn-buy" [href]="product.link" target="_blank">Купить</a>
+  <p>Лайков: {{ product.likes }}</p>
+</div>
