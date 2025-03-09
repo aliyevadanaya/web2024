@@ -1,0 +1,59 @@
+.task-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .task-item.completed {
+    background: #e0ffe0;
+    text-decoration: line-through;
+  }
+  
+  .task-item h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .task-item p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .task-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .task-actions button {
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .complete-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .complete-btn:hover {
+    background-color: #218838;
+  }
+  
+  .details-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .details-btn:hover {
+    background-color: #0056b3;
+  }
+  

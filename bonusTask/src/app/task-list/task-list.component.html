@@ -1,0 +1,24 @@
+<h2>Task List</h2>
+
+<div class="add-task-form">
+  <input type="text" [(ngModel)]="newTask.title" placeholder="Task title" required />
+  <input type="text" [(ngModel)]="newTask.description" placeholder="Task description" required />
+  <select [(ngModel)]="newTask.category">
+    <option value="Work">Work</option>
+    <option value="Personal">Personal</option>
+    <option value="Study">Study</option>
+  </select>
+  <button (click)="addTask()">Add Task</button>
+</div>
+
+<div class="tasks-container">
+  <div *ngFor="let task of tasks" class="task-card" [class.completed]="task.status === 'completed'">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <small>Category: {{ task.category }}</small>
+    <div class="task-actions">
+      <button class="complete-btn" (click)="markTaskAsCompleted(task.id)">Mark as Completed</button>
+      <button class="details-btn" [routerLink]="['/task', task.id]">View Details</button>
+    </div>
+  </div>
+</div>

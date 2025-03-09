@@ -1,0 +1,10 @@
+<div class="task-item">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <p><strong>Category:</strong> {{ task.category }}</p>
+    <p><strong>Status:</strong> {{ task.status }}</p>
+    <button (click)="completeTask()" [disabled]="task.status === 'completed'">
+      Mark as Completed
+    </button>
+  </div>
+  
