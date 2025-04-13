@@ -1,0 +1,6 @@
+<h2>Компании</h2>
+<ul>
+    <li *ngFor="let c of companies" (click)="goToVacancies(c.id)">
+        {{ c.name }} - {{ c.city }}
+    </li>
+</ul>
